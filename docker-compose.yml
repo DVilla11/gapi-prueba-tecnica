@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  app:
+    image: 'java-docker'
+    build:
+      context: .
+    container_name: docker-java-postgres
+    depends_on:
+       - db
+    environment:
+       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+       - SPRING_DATASOURCE_USERNAME=root
+       - SPRING_DATASOURCE_PASSWORD=root
+    ports:
+       - "8081:8081"
+
+  db:
+    image: 'postgres:latest'
+    container_name: postgres-database
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
