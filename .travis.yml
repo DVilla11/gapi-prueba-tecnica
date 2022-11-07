@@ -1,5 +1,4 @@
 language: java
-sudo: false
 
 cache:
   directories:
@@ -10,6 +9,3 @@ before_cache:
 
 jdk:
   - oraclejdk17
-
-before_install:
-  - chmod +x build.sh
