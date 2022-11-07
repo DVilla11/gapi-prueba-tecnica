@@ -10,3 +10,6 @@ before_cache:
 
 jdk:
   - oraclejdk17
+
+before_install:
+  - chmod +x build.sh
